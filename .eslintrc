@@ -1,0 +1,45 @@
+{
+    "parser": "babel-eslint",
+    "extends": [
+      "airbnb",
+      "plugin:flowtype/recommended",
+      "plugin:react/recommended",
+      "prettier",
+      "prettier/flowtype",
+      "prettier/react"
+    ],
+    "globals": {
+      "chrome": true
+    },
+    "plugins": ["prettier", "flowtype"],
+    "parserOptions": {
+      "ecmaVersion": 2016,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true,
+      "jest": true
+    },
+    "rules": {
+      "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true
+        }
+      ],
+      "new-cap": [
+        2,
+        {
+          "capIsNewExceptionPattern": "List|Map"
+        }
+      ]
+    }
+  }
+  
