@@ -3,15 +3,10 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 import { rem, em } from 'polished';
+import FooterSection from '../FooterSection';
 import SocialNetworks from '../SocialNetworks';
 
-const AboutContainer = styled.div`
-  * {
-    margin-bottom: ${rem('15px')};
-  }
-`;
-
-const FooterButton = styled.a`
+const ResumeButton = styled.a`
   font-size: ${em('12px')};
   display: inline-block;
   padding: ${rem('10px')};
@@ -19,11 +14,12 @@ const FooterButton = styled.a`
   text-transform: uppercase;
 `;
 
-const HomeLink = styled(Link)`
-  color: #ddd;
-`;
-
 const socialNetworks = [
+  {
+    link: 'mailto:tbs.timm@gmail.com',
+    icon: 'envelope',
+    title: 'Mail'
+  },
   {
     link: 'https://github.com/TobiasTimm',
     icon: 'github',
@@ -52,15 +48,14 @@ const socialNetworks = [
 ];
 
 const About = () => (
-  <AboutContainer>
-    <HomeLink to="/">
-      <h4>Tobias Timm</h4>
-    </HomeLink>
+  <FooterSection title="Tobias Timm">
     <SocialNetworks networks={socialNetworks} />
-    <FooterButton target="_blank" rel="noopener noreferrer">
-      Download Résumé
-    </FooterButton>
-  </AboutContainer>
+    <p>
+      <ResumeButton target="_blank" rel="noopener noreferrer">
+        Download Résumé
+      </ResumeButton>
+    </p>
+  </FooterSection>
 );
 
 export default About;

@@ -22,7 +22,7 @@ const enhance = compose(
 const Header = enhance(({ expand, showMore, showLess }) => {
   const toggleExpand = () => (expand ? showLess() : showMore());
   return (
-    <Navbar color="faded" dark className="bg-dark" expand="md">
+    <Navbar dark className="bg-dark" expand="md">
       <Link className="navbar-brand" to="/">
         Tobias Timm
       </Link>
