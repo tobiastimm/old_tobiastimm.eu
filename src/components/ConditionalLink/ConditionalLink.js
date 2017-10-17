@@ -39,14 +39,26 @@ const StyledLink = styled.a`
   }
 `;
 
-const GatsbyLink = ({ title, link }) => (
-  <StyledLink to={link} data-hover-label={title}>
+const GatsbyLink = ({ title, className, link }) => (
+  <StyledLink to={link} className={className} data-hover-label={title}>
     {title}
   </StyledLink>
 );
 
-const ExternalLink = ({ title, link }) => (
+GatsbyLink.propTypes = {
+  title: PropTypes.string,
+  className: PropTypes.string,
+  link: PropTypes.string.isRequired
+};
+
+GatsbyLink.defaultProps = {
+  title: '',
+  className: ''
+};
+
+const ExternalLink = ({ title, className, link }) => (
   <StyledLink
+    className={className}
     href={link}
     target="_blank"
     rel="noopener noreferrer"
@@ -58,11 +70,13 @@ const ExternalLink = ({ title, link }) => (
 
 ExternalLink.propTypes = {
   title: PropTypes.string,
+  className: PropTypes.string,
   link: PropTypes.string.isRequired
 };
 
 ExternalLink.defaultProps = {
-  title: ''
+  title: '',
+  className: ''
 };
 
 const ConditionalLink = props => {
@@ -74,10 +88,12 @@ const ConditionalLink = props => {
 
 ConditionalLink.propTypes = {
   title: PropTypes.string,
+  className: PropTypes.string,
   link: PropTypes.string.isRequired
 };
 
 ConditionalLink.defaultProps = {
+  className: '',
   title: ''
 };
 export default ConditionalLink;

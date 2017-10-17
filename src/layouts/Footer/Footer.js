@@ -9,19 +9,9 @@ import ConditionalLink from '../../components/ConditionalLink';
 
 const StyledFooter = styled.footer``;
 
-const FooterBackground = styled.div`
-  background-color: #6351ce;
-`;
-
-const HorizontalLine = styled.hr`
-  background-color: #fff !important;
-  width: 60px;
-`;
 
 const Footer = () => (
   <StyledFooter className="bg-dark text-white center-on-small-only unique-color-dark pt-0">
-    <FooterBackground />
-
     <div className="container mt-5 mb-4 text-center text-md-left">
       <div className="row mt-3">
         <div className="col-md-3 col-lg-4 col-xl-3 mb-r">

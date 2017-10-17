@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'gatsby-link';
 import {
   Collapse,
   Navbar,
@@ -10,6 +9,7 @@ import {
   NavLink
 } from 'reactstrap';
 import { compose, withHandlers, withState } from 'recompose';
+import Link from 'gatsby-link';
 
 const enhance = compose(
   withState('expand', 'toggleExpand', false),

@@ -5,16 +5,14 @@ import styled from 'styled-components';
 
 const StyledIcon = styled.a`
   display: inline-block;
-  width: 35px;
-  height: 35px;
+  width: ${rem('35px')};
+  height: ${rem('35px')};
   cursor: pointer;
-  border-radius: 2px;
-  font-size: 20px;
-  color: #ffffff;
-  text-align: center;
-  line-height: 35px;
-  margin-right: 3px;
-  margin-bottom: 5px;
+  font-size: ${em('25px')};
+  color: #fff;
+  line-height: ${rem('35px')};
+  margin-right: ${rem('3px')};
+  margin-bottom: ${rem('5px')};
 
   :hover {
     color: ${darken(0.5)('#fff')};
