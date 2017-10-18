@@ -1,13 +1,18 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "tobiastimm.eu",
+  "description": "Personal website of Tobias Timm",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Tobias Timm <tbs.timm@gmail.com>",
+  "homepage": "https://tobiastimm.eu",
   "keywords": [
     "gatsby"
   ],
   "license": "MIT",
   "main": "n/a",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TobiasTimm/tobiastimm.eu.git"
+  },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -94,6 +99,7 @@
     "gatsby-transformer-remark": "^1.7.16",
     "gatsby-transformer-sharp": "^1.6.10",
     "image-size": "^0.6.1",
+    "lodash": "^4.17.4",
     "polished": "^1.7.0",
     "prop-types": "^15.6.0",
     "reactstrap": "^5.0.0-alpha.3",
