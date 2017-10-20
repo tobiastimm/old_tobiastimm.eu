@@ -2,6 +2,7 @@ import React from 'react';
 import PropTyes from 'prop-types';
 import styled from 'styled-components';
 import { rem } from 'polished';
+import ConditionalLink from '../ConditionalLink';
 
 const Wrapper = styled.div`
   overflow: hidden;
@@ -17,9 +18,8 @@ const CopyRight = () => (
   <Wrapper className="footer-copyright">
     <div className="container-fluid">
       © 2017 Copyright:{' '}
-      <a href="https://tobiastimm.eu">
-        <strong> Tobias Timm</strong>
-      </a>
+      <ConditionalLink title="Tobias Timm" link="https://tobiastimm.eu">
+      </ConditionalLink>
     </div>
   </Wrapper>
 );

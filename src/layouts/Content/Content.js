@@ -8,7 +8,7 @@ const Container = styled.section`
 
 const Content = ({ children }) => (
   <Container>
-    <div className="container py-4">
+    <div className="container my-5 py-4">
       <div className="row">{children()}</div>
     </div>
   </Container>

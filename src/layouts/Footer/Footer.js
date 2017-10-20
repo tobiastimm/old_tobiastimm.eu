@@ -27,7 +27,7 @@ const Footer = () => (
               <ConditionalLink title="Education" />
             </p>
             <p>
-              <ConditionalLink title="Skills" />
+              <ConditionalLink title="Skills" link="/skills" />
             </p>
             <p>
               <ConditionalLink title="Site notice" />

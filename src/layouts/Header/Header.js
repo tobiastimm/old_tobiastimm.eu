@@ -22,7 +22,7 @@ const enhance = compose(
 const Header = enhance(({ expand, showMore, showLess }) => {
   const toggleExpand = () => (expand ? showLess() : showMore());
   return (
-    <Navbar dark className="bg-dark" expand="md">
+    <Navbar fixed="top" dark className="bg-dark" expand="md">
       <Link className="navbar-brand" to="/">
         Tobias Timm
       </Link>
@@ -35,8 +35,13 @@ const Header = enhance(({ expand, showMore, showLess }) => {
             </Link>
           </NavItem>
           <NavItem>
-            <Link className="nav-link" to="/page-2">
-              Page-2
+            <Link className="nav-link" to="/skills">
+              Skills
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link className="nav-link" to="/skills/java">
+              Java
             </Link>
           </NavItem>
         </Nav>

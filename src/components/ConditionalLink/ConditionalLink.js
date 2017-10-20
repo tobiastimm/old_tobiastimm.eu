@@ -6,43 +6,32 @@ import Link from 'gatsby-link';
 
 const StyledLink = styled.a`
   display: inline-block;
-  position: relative;
   color: #fff;
   cursor: pointer;
-  overflow: hidden;
   text-decoration: none;
 
   :hover {
-    color: #fff;
+    color: ${darken(0.5)('#fff')};
     text-decoration: none;
   }
+`;
 
-  :after {
-    content: '' attr(data-hover-label) '';
-    width: 0;
-    overflow: hidden;
-    transition: width 0.2s ease-out;
+const StyledGatsbyLink = styled(Link)`
+  display: inline-block;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
 
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-  :focus {
-    outline: none;
-  }
-  :hover:after,
-  :focus:after {
-    width: 100%;
-  }
-  :after {
+  :hover {
     color: ${darken(0.5)('#fff')};
+    text-decoration: none;
   }
 `;
 
 const GatsbyLink = ({ title, className, link }) => (
-  <StyledLink to={link} className={className} data-hover-label={title}>
+  <StyledGatsbyLink to={link} className={className}>
     {title}
-  </StyledLink>
+  </StyledGatsbyLink>
 );
 
 GatsbyLink.propTypes = {
@@ -62,7 +51,6 @@ const ExternalLink = ({ title, className, link }) => (
     href={link}
     target="_blank"
     rel="noopener noreferrer"
-    data-hover-label={title}
   >
     {title}
   </StyledLink>
