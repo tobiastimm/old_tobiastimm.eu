@@ -6,6 +6,7 @@ import { rem, darken } from 'polished';
 const Wrapper = styled.div`
   a {
     color: #212529;
+    font-weight: 600;
     cursor: pointer;
     overflow: hidden;
     text-decoration: none;

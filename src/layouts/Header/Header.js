@@ -30,18 +30,8 @@ const Header = enhance(({ expand, showMore, showLess }) => {
       <Collapse isOpen={expand} navbar>
         <Nav navbar className="mr-auto">
           <NavItem>
-            <Link className="nav-link" to="/">
-              Home
-            </Link>
-          </NavItem>
-          <NavItem>
             <Link className="nav-link" to="/skills">
               Skills
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link className="nav-link" to="/skills/java">
-              Java
             </Link>
           </NavItem>
         </Nav>
