@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink
-} from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { compose, withHandlers, withState } from 'recompose';
 import Link from 'gatsby-link';
 
@@ -15,8 +7,8 @@ const enhance = compose(
   withState('expand', 'toggleExpand', false),
   withHandlers({
     showMore: props => () => props.toggleExpand(expand => true),
-    showLess: props => () => props.toggleExpand(expand => false)
-  })
+    showLess: props => () => props.toggleExpand(expand => false),
+  }),
 );
 
 const Header = enhance(({ expand, showMore, showLess }) => {
@@ -32,6 +24,11 @@ const Header = enhance(({ expand, showMore, showLess }) => {
           <NavItem>
             <Link className="nav-link" to="/skills">
               Skills
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link className="nav-link" to="/education">
+              Education
             </Link>
           </NavItem>
         </Nav>

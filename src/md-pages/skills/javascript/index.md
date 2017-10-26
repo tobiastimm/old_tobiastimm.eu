@@ -39,6 +39,8 @@ My last task was the migration from grunt to a webpack build system within our A
 - reselect
 - recompose
 - storybook
+- HighCharts
+- d3
 
 
 ##### Typesystems & Transpilers
@@ -56,6 +58,8 @@ My last task was the migration from grunt to a webpack build system within our A
 - sinon
 - jest
 - enzyme
+- protractor
+- CodeceptJS
 
 ##### Documentation
 
@@ -77,7 +81,6 @@ My last task was the migration from grunt to a webpack build system within our A
 - CSS
 - CSS in JS (styled-components)
 - material-ui
-
 
 ##### Build tools
 
