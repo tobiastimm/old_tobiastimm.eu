@@ -12,13 +12,13 @@ const StyledEvent = styled.div`
 const EventType = styled.div`
   position: absolute;
   top: 0;
-  left: 0;
-  borderradius: 50%;
+  left: ${rem('3px')};
+  border-radius: 50%;
   width: ${rem('30px')};
   height: ${rem('30px')};
-  marginleft: 1;
+  margin-left: ${rem('1px')};
   background: #e9f0f5;
-  border: ${rem('2px')} solid #6fba1c;
+  border: ${rem('2px')} solid #212529;
   display: flex;
 `;
 
@@ -47,7 +47,7 @@ const ContainerBefore = styled.div`
 `;
 
 const EventHeader = styled.div`
-  background-color: #7bb1ea;
+  background-color: #343a40;
   padding: ${rem('10px')};
   color: #fff;
 `;
