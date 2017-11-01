@@ -106,6 +106,7 @@
     "recompose": "^0.26.0",
     "sanitize.css": "^5.0.0",
     "styled-components": "^2.2.1",
+    "styled-props": "^1.1.1",
     "styled-tools": "^0.2.2"
   },
   "devDependencies": {

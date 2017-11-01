@@ -2,100 +2,271 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { rem, em } from 'polished';
+import styledProps from 'styled-props';
 
-const StyledEvent = styled.div`
+const EventPanel = styled.div`
   position: relative;
-  margin: ${rem('10px')} 0;
-  padding-left: ${rem('45px')};
+  float: ${props => (!props.inverted ? 'left' : 'right')};
+  width: 41%;
+  padding: ${props =>
+    (!props.inverted
+      ? `0 ${rem('20px')} ${rem('20px')} ${rem('30px')}`
+      : `0 ${rem('30px')} ${rem('20px')} ${rem('20px')}`)};
+  text-align: ${props => (!props.inverted ? 'right' : 'left')};
+
+  &:before {
+    right: auto;
+    left: ${rem('-15px')};
+    border-right-width: ${rem('15px')};
+    border-left-width: 0;
+  }
+  &:after {
+    right: auto;
+    left: ${rem('-14px')};
+    border-right-width: ${rem('14px')};
+    border-left-width: 0;
+  }
 `;
 
-const EventType = styled.div`
+const EventImage = styled.div`
+  z-index: 100;
   position: absolute;
-  top: 0;
-  left: ${rem('3px')};
-  border-radius: 50%;
-  width: ${rem('30px')};
-  height: ${rem('30px')};
-  margin-left: ${rem('1px')};
-  background: #e9f0f5;
-  border: ${rem('2px')} solid #212529;
-  display: flex;
+  left: 50%;
+  border: ${rem('7px')} solid #3b5998;
+  border-radius: 100%;
+  background-color: #3b5998;
+  box-shadow: 0 0 ${rem('5px')} #4582ec;
+  width: ${rem('200px')};
+  height: ${rem('200px')};
+  margin-left: ${rem('-100px')};
 `;
 
-const IconSpan = styled.span`
-  display: flex;
-  width: ${rem('32px')};
-  height: ${rem('32px')};
-  position: relative;
-  justify-content: center;
-  align-self: center;
-  align-items: center;
+const EventHeading = styled.div`
+  h4 {
+    margin-top: ${rem('22px')};
+    margin-bottom: ${rem('4px')};
+    padding: 0;
+    color: #b3b3b3;
+  }
+
+  h4.subheading {
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+    font-size: ${rem('18px')};
+    color: #333333;
+  }
 `;
 
-const Container = styled.div`
-  position: relative;
-  box-shadow: rgba(0, 0, 0, 0.117647) ${rem('0px')} ${rem('1px')} ${rem('6px')},
-    rgba(0, 0, 0, 0.117647) ${rem('0px')} ${rem('1px')} ${rem('4px')};
-  background-color: rgb(255, 255, 255);
+const EventBody = styled.div`
+  p,
+  ul {
+    margin-bottom: 0;
+    color: #808080;
+  }
 `;
 
-const ContainerBefore = styled.div`
-  top: ${rem('24px')};
-  left: 100%;
-  border-color: transparent;
-  border-left-color: #ffffff;
-`;
+const Line = styled.div``;
 
-const EventHeader = styled.div`
-  background-color: #343a40;
-  padding: ${rem('10px')};
-  color: #fff;
-`;
+const StyledElement = styled.li`
 
-const EventAfter = styled.div`
-  clear: both;
-  content: '';
-  display: table;
-`;
+  &:nth-child(even) {
+    position: relative;
+    margin-bottom: ${rem('50px')};
+    height: ${rem('180px')};
+    right: ${rem('-100px')};
+  }
 
-const Message = styled.div`
-  width: 98%;
-  background-color: #ffffff;
-  box-shadow: 0 ${rem('1px')} ${rem('3px')} 0 rgba(0, 0, 0, 0.1);
-  margin-top: 1em;
-  margin-bottom: 1em;
-  line-height: 1.6em;
-  padding: ${rem('10px')};
-  min-height: ${rem('4px')};
-`;
+  &:nth-child(odd) {
+    position: relative;
+    margin-bottom: ${rem('50px')};
+    height: ${rem('180px')};
+    left: ${rem('-100px')};
+  }
 
-const MessageAfter = styled.div`
-  clear: both;
-  content: '';
-  display: table;
-`;
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
 
-const TimelineEvent = ({ title, icon, children }) => (
-  <StyledEvent>
-    <EventType>
-      <IconSpan>
-        <i className={`fa fa-${icon}`} aria-hidden="true" title={title} />
-      </IconSpan>
-    </EventType>
-    <Container>
-      <ContainerBefore />
-      <EventHeader>
-        <div>{title}</div>
-      </EventHeader>
-      {children && (
-        <Message>
-          {children}
-          <MessageAfter />
-        </Message>
-      )}
-    </Container>
-    <EventAfter />
-  </StyledEvent>
+  &:after {
+    clear: both;
+    min-height: ${rem('170px')};
+  }
+
+  & ${EventImage} h4 {
+    margin-top: ${rem('12px')};
+    font-size: ${em('10px')};
+    line-height: ${em('14px')};
+  }
+
+  &:nth-child(odd) ${Line}:before {
+    content: '';
+    position: absolute;
+    top: ${rem('60px')};
+    bottom: 0;
+    left: ${rem('690px')};
+    width: ${rem('4px')};
+    height: ${rem('340px')};
+    background-color: #3b5998;
+    -ms-transform: rotate(-44deg); /* IE 9 */
+    -webkit-transform: rotate(-44deg); /* Safari */
+    transform: rotate(-44deg);
+    box-shadow: 0 0 ${rem('5px')} #4582ec;
+  }
+
+  &:nth-child(even) ${Line}:before {
+    content: '';
+    position: absolute;
+    top: ${rem('60px')};
+    bottom: 0;
+    left: ${rem('450px')};
+    width: ${rem('4px')};
+    height: ${rem('340px')};
+    background-color: #3b5998;
+    -ms-transform: rotate(44deg); /* IE 9 */
+    -webkit-transform: rotate(44deg); /* Safari */
+    transform: rotate(44deg);
+    box-shadow: 0 0 ${rem('5px')} #4582ec;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) {
+    &:nth-child(even) {
+      margin-bottom: 0;
+      min-height: 0;
+      right: 0;
+    }
+    &:nth-child(odd) {
+      margin-bottom: 0;
+      min-height: 0;
+      left: 0;
+    }
+
+    &:nth-child(even) ${EventImage} {
+      left: 0;
+      margin-left: 0;
+    }
+    &:nth-child(odd) ${EventImage} {
+      left: ${rem('690px')};
+      margin-left: 0;
+    }
+
+    &:nth-child(even) ${EventPanel} {
+      width: 76%;
+      padding: 0 0 ${rem('20px')} 0;
+      text-align: left;
+    }
+    &:nth-child(odd) ${EventPanel} {
+      width: 70%;
+      padding: 0 0 ${rem('20px')} 0px;
+      text-align: right;
+    }
+    & ${Line} {
+      display: none;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    &:nth-child(even) {
+      margin-bottom: 0;
+      min-height: 0;
+      right: 0;
+    }
+    &:nth-child(odd) {
+      margin-bottom: 0;
+      min-height: 0;
+      left: 0;
+    }
+
+    &:nth-child(even) ${EventImage} {
+      left: 0;
+      margin-left: 0;
+    }
+    &:nth-child(odd) ${EventImage} {
+      left: ${rem('520px')};
+      margin-left: 0;
+    }
+
+    &:nth-child(even) ${EventPanel} {
+      width: 70%;
+      padding: 0 0 ${rem('20px')} 0;
+      text-align: left;
+    }
+    &:nth-child(odd) ${EventPanel} {
+      width: 70%;
+      padding: 0 0 ${rem('20px')} 0px;
+      text-align: right;
+    }
+    & ${Line} {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    &:nth-child(even) {
+      margin-bottom: 0;
+      min-height: 0;
+      right: 0;
+    }
+    &:nth-child(odd) {
+      margin-bottom: 0;
+      min-height: 0;
+      left: 0;
+    }
+
+    & ${EventImage} {
+      position: static;
+      width: ${rem('150px')};
+      height: ${rem('150px')};
+      margin-bottom: 0;
+    }
+
+    &:nth-child(even) ${EventImage} {
+      left: 0;
+      margin-left: 0;
+    }
+    &:nth-child(odd) ${EventImage} {
+      float: right;
+      left: 0;
+      margin-left: 0;
+    }
+
+    &:nth-child(even) ${EventPanel} {
+      width: 100%;
+      padding: 0 0 ${rem('20px')} ${rem('14px')};
+    }
+    &:nth-child(odd) ${EventPanel} {
+      width: 100%;
+      padding: 0 ${rem('14px')} ${rem('20px')} 0;
+    }
+    & ${Line} {
+      display: none;
+    }
+  }
+`;
+const TimelineEvent = ({
+  title, subTitle, icon, children, inverted,
+}) => (
+  <StyledElement>
+    <EventImage>
+      <img className="rounded-circle img-fluid" src="http://lorempixel.com/250/250" alt="" />
+    </EventImage>
+    <EventPanel inverted={inverted}>
+      <EventHeading>
+        <h4>{title}</h4>
+        <h4 className="subheading">{subTitle}</h4>
+      </EventHeading>
+      <EventBody>
+        <p className="text-muted">{children}</p>
+      </EventBody>
+    </EventPanel>
+    <Line />
+  </StyledElement>
 );
 
 export default TimelineEvent;
