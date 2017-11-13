@@ -28,12 +28,12 @@ const SocialIcon = ({ link, icon, title }) => (
 SocialIcon.propTypes = {
   title: PropTypes.string,
   icon: PropTypes.string,
-  link: PropTypes.string.isRequired
+  link: PropTypes.string.isRequired,
 };
 
 SocialIcon.defaultProps = {
   title: '',
-  icon: ''
+  icon: '',
 };
 
 export default SocialIcon;

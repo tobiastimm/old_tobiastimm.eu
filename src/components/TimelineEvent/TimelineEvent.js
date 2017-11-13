@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { rem, em } from 'polished';
+import { rem, em, lighten } from 'polished';
 import styledProps from 'styled-props';
 
 const EventPanel = styled.div`
@@ -32,10 +32,10 @@ const EventImage = styled.div`
   z-index: 100;
   position: absolute;
   left: 50%;
-  border: ${rem('7px')} solid #3b5998;
+  border: ${rem('7px')} solid #343a40;
   border-radius: 100%;
-  background-color: #3b5998;
-  box-shadow: 0 0 ${rem('5px')} #4582ec;
+  background-color: #343a40;
+  box-shadow: 0 0 ${rem('5px')} ${lighten(0.1)('#343A40')};
   width: ${rem('200px')};
   height: ${rem('200px')};
   margin-left: ${rem('-100px')};
@@ -46,7 +46,7 @@ const EventHeading = styled.div`
     margin-top: ${rem('22px')};
     margin-bottom: ${rem('4px')};
     padding: 0;
-    color: #b3b3b3;
+    color: ${lighten(0.1)('#343A40')};
   }
 
   h4.subheading {
@@ -54,7 +54,7 @@ const EventHeading = styled.div`
     padding: 0;
     text-transform: none;
     font-size: ${rem('18px')};
-    color: #333333;
+    color: ${lighten(0.2)('#343A40')};
   }
 `;
 
@@ -62,14 +62,13 @@ const EventBody = styled.div`
   p,
   ul {
     margin-bottom: 0;
-    color: #808080;
+    color: ${lighten(0.2)('#343A40')};
   }
 `;
 
 const Line = styled.div``;
 
 const StyledElement = styled.li`
-
   &:nth-child(even) {
     position: relative;
     margin-bottom: ${rem('50px')};
@@ -109,11 +108,11 @@ const StyledElement = styled.li`
     left: ${rem('690px')};
     width: ${rem('4px')};
     height: ${rem('340px')};
-    background-color: #3b5998;
+    background-color: #343a40;
     -ms-transform: rotate(-44deg); /* IE 9 */
     -webkit-transform: rotate(-44deg); /* Safari */
     transform: rotate(-44deg);
-    box-shadow: 0 0 ${rem('5px')} #4582ec;
+    box-shadow: 0 0 ${rem('5px')} ${lighten(0.1)('#343A40')};
   }
 
   &:nth-child(even) ${Line}:before {
@@ -124,15 +123,21 @@ const StyledElement = styled.li`
     left: ${rem('450px')};
     width: ${rem('4px')};
     height: ${rem('340px')};
-    background-color: #3b5998;
+    background-color: #343a40;
     -ms-transform: rotate(44deg); /* IE 9 */
     -webkit-transform: rotate(44deg); /* Safari */
     transform: rotate(44deg);
-    box-shadow: 0 0 ${rem('5px')} #4582ec;
+    box-shadow: 0 0 ${rem('5px')} ${lighten(0.1)('#343A40')};
   }
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  @media (min-width: 1200px) {
+    & ${EventBody} p {
+      min-height: ${rem('300px')};
+    }
   }
 
   @media (min-width: 992px) and (max-width: 1199px) {
@@ -149,21 +154,23 @@ const StyledElement = styled.li`
 
     &:nth-child(even) ${EventImage} {
       left: 0;
+      bottom: ${rem('5px')};
       margin-left: 0;
     }
     &:nth-child(odd) ${EventImage} {
-      left: ${rem('690px')};
+      left: ${rem('670px')};
+      bottom: ${rem('5px')};
       margin-left: 0;
     }
 
     &:nth-child(even) ${EventPanel} {
       width: 76%;
-      padding: 0 0 ${rem('20px')} 0;
+      padding: ${rem('10px')} 0 ${rem('20px')} ${rem('20px')};
       text-align: left;
     }
     &:nth-child(odd) ${EventPanel} {
       width: 70%;
-      padding: 0 0 ${rem('20px')} 0px;
+      padding: ${rem('10px')} 0 ${rem('20px')} 0;
       text-align: right;
     }
     & ${Line} {
@@ -185,16 +192,18 @@ const StyledElement = styled.li`
 
     &:nth-child(even) ${EventImage} {
       left: 0;
+      bottom: ${rem('5px')};
       margin-left: 0;
     }
     &:nth-child(odd) ${EventImage} {
-      left: ${rem('520px')};
+      left: ${rem('500px')};
+      bottom: ${rem('5px')};
       margin-left: 0;
     }
 
     &:nth-child(even) ${EventPanel} {
       width: 70%;
-      padding: 0 0 ${rem('20px')} 0;
+      padding: 0 0 ${rem('20px')} ${rem('40px')};
       text-align: left;
     }
     &:nth-child(odd) ${EventPanel} {
@@ -227,6 +236,7 @@ const StyledElement = styled.li`
     }
 
     &:nth-child(even) ${EventImage} {
+      float: left;
       left: 0;
       margin-left: 0;
     }
@@ -250,11 +260,11 @@ const StyledElement = styled.li`
   }
 `;
 const TimelineEvent = ({
-  title, subTitle, icon, children, inverted,
+  title, subTitle, image, children, inverted,
 }) => (
   <StyledElement>
     <EventImage>
-      <img className="rounded-circle img-fluid" src="http://lorempixel.com/250/250" alt="" />
+      <img className="rounded-circle img-fluid" src={image} alt="" />
     </EventImage>
     <EventPanel inverted={inverted}>
       <EventHeading>

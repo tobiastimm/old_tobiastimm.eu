@@ -14,7 +14,6 @@ const Timeline = ({ children }) => (
   <div className="container">
     <div className="col">
       <h3>Education</h3>
-      <p>Lorem ipsum, bla bla bal</p>
       <StyledList>{children}</StyledList>
     </div>
   </div>

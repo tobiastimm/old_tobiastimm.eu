@@ -25,11 +25,11 @@ const FooterSection = ({ title, children }) => (
 
 FooterSection.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.arrayOf(PropTypes.element)
+  children: PropTypes.arrayOf(PropTypes.element),
 };
 
 FooterSection.defaultProps = {
-  children: []
+  children: [],
 };
 
 export default FooterSection;

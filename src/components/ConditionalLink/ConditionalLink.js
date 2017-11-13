@@ -37,21 +37,16 @@ const GatsbyLink = ({ title, className, link }) => (
 GatsbyLink.propTypes = {
   title: PropTypes.string,
   className: PropTypes.string,
-  link: PropTypes.string.isRequired
+  link: PropTypes.string.isRequired,
 };
 
 GatsbyLink.defaultProps = {
   title: '',
-  className: ''
+  className: '',
 };
 
 const ExternalLink = ({ title, className, link }) => (
-  <StyledLink
-    className={className}
-    href={link}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
+  <StyledLink className={className} href={link} target="_blank" rel="noopener noreferrer">
     {title}
   </StyledLink>
 );
@@ -59,15 +54,15 @@ const ExternalLink = ({ title, className, link }) => (
 ExternalLink.propTypes = {
   title: PropTypes.string,
   className: PropTypes.string,
-  link: PropTypes.string.isRequired
+  link: PropTypes.string.isRequired,
 };
 
 ExternalLink.defaultProps = {
   title: '',
-  className: ''
+  className: '',
 };
 
-const ConditionalLink = props => {
+const ConditionalLink = (props) => {
   if (props.link && props.link.includes('http')) {
     return <ExternalLink {...props} />;
   }
@@ -77,11 +72,11 @@ const ConditionalLink = props => {
 ConditionalLink.propTypes = {
   title: PropTypes.string,
   className: PropTypes.string,
-  link: PropTypes.string.isRequired
+  link: PropTypes.string.isRequired,
 };
 
 ConditionalLink.defaultProps = {
   className: '',
-  title: ''
+  title: '',
 };
 export default ConditionalLink;

@@ -18,33 +18,33 @@ const socialNetworks = [
   {
     link: 'mailto:tbs.timm@gmail.com',
     icon: 'envelope',
-    title: 'Mail'
+    title: 'Mail',
   },
   {
     link: 'https://github.com/TobiasTimm',
     icon: 'github',
-    title: 'GitHub'
+    title: 'GitHub',
   },
   {
     link: 'https://stackoverflow.com/users/4943147/tobias-timm',
     icon: 'stack-overflow',
-    title: 'Stack Overflow'
+    title: 'Stack Overflow',
   },
   {
     link: 'https://twitter.com/TbsTimm',
     icon: 'twitter',
-    title: 'Twitter'
+    title: 'Twitter',
   },
   {
     link: 'https://www.linkedin.com/in/tbstimm',
     icon: 'linkedin',
-    title: 'LinkedIn'
+    title: 'LinkedIn',
   },
   {
     link: 'https://www.xing.com/profile/Tobias_Timm4',
     icon: 'xing',
-    title: 'Xing'
-  }
+    title: 'Xing',
+  },
 ];
 
 const About = () => (
