@@ -6,9 +6,21 @@ import SocialIcon from '../SocialIcon/SocialIcon';
 const Wrapper = styled.p``;
 
 const SocialNetworks = ({ networks }) => (
-  <Wrapper>
-    {networks.map(network => <SocialIcon key={network.title} {...network} />)}
-  </Wrapper>
+  <Wrapper>{networks.map(network => <SocialIcon key={network.title} {...network} />)}</Wrapper>
 );
 
 export default SocialNetworks;
+
+export const socialNetworksQuery = graphql`
+  fragment socialNetworks on RootQueryType {
+    allSocialNetworksJson {
+      edges {
+        node {
+          title
+          icon
+          link
+        }
+      }
+    }
+  }
+`;

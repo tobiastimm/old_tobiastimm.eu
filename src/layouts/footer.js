@@ -2,20 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 import { rem, em, darken } from 'polished';
 
-import About from '../../components/About';
-import CopyRight from '../../components/CopyRight';
-import FooterSection from '../../components/FooterSection';
-import ConditionalLink from '../../components/ConditionalLink';
+import About from '../components/About';
+import CopyRight from '../components/CopyRight';
+import FooterSection from '../components/FooterSection';
+import ConditionalLink from '../components/ConditionalLink';
 
 const StyledFooter = styled.footer``;
 
-
-const Footer = () => (
+const Footer = ({ socialNetworks }) => (
   <StyledFooter className="bg-dark text-white center-on-small-only unique-color-dark pt-0">
     <div className="container mt-5 mb-4 text-center text-md-left">
       <div className="row mt-3">
         <div className="col-md-3 col-lg-4 col-xl-3 mb-r">
-          <About />
+          <About socialNetworks={socialNetworks} />
         </div>
 
         <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-r">
@@ -62,16 +61,10 @@ const Footer = () => (
               />
             </p>
             <p>
-              <ConditionalLink
-                title="Reddit - react"
-                link="https://www.reddit.com/r/reactjs/"
-              />
+              <ConditionalLink title="Reddit - react" link="https://www.reddit.com/r/reactjs/" />
             </p>
             <p>
-              <ConditionalLink
-                title="Gatsby"
-                link="https://github.com/gatsbyjs/gatsby"
-              />
+              <ConditionalLink title="Gatsby" link="https://github.com/gatsbyjs/gatsby" />
             </p>
           </FooterSection>
         </div>

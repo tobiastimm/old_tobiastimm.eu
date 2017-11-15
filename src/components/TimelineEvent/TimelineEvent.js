@@ -279,4 +279,20 @@ const TimelineEvent = ({
   </StyledElement>
 );
 
+TimelineEvent.propTypes = {
+  title: PropTypes.string,
+  subTitle: PropTypes.string,
+  image: PropTypes.string,
+  children: PropTypes.node,
+  inverted: PropTypes.bool,
+};
+
+TimelineEvent.defaultProps = {
+  title: '',
+  subTitle: '',
+  image: '',
+  children: undefined,
+  inverted: false,
+};
+
 export default TimelineEvent;

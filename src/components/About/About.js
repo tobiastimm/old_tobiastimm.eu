@@ -14,40 +14,7 @@ const ResumeButton = styled.a`
   text-transform: uppercase;
 `;
 
-const socialNetworks = [
-  {
-    link: 'mailto:tbs.timm@gmail.com',
-    icon: 'envelope',
-    title: 'Mail',
-  },
-  {
-    link: 'https://github.com/TobiasTimm',
-    icon: 'github',
-    title: 'GitHub',
-  },
-  {
-    link: 'https://stackoverflow.com/users/4943147/tobias-timm',
-    icon: 'stack-overflow',
-    title: 'Stack Overflow',
-  },
-  {
-    link: 'https://twitter.com/TbsTimm',
-    icon: 'twitter',
-    title: 'Twitter',
-  },
-  {
-    link: 'https://www.linkedin.com/in/tbstimm',
-    icon: 'linkedin',
-    title: 'LinkedIn',
-  },
-  {
-    link: 'https://www.xing.com/profile/Tobias_Timm4',
-    icon: 'xing',
-    title: 'Xing',
-  },
-];
-
-const About = () => (
+const About = ({ socialNetworks }) => (
   <FooterSection title="Tobias Timm">
     <SocialNetworks networks={socialNetworks} />
     <p>
@@ -59,3 +26,9 @@ const About = () => (
 );
 
 export default About;
+
+export const pageQuery = graphql`
+  query SocialNetworksQuery {
+    ...socialNetworks
+  }
+`;

@@ -1,6 +1,6 @@
 ---
 title: Skills
-path: "/skills"
+path: "/_skills"
 ---
 
 As a developer I always want to improve my skillset and learn new things everyday. Over these years I have accquired a extended skillset in multiple programming languages, tools, design patterns, mindset, customer care, customer support, ... .
