@@ -1,0 +1,9 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1900" height="1000">
+<title>48-star U.S. flag</title><g transform="scale(7.692308)"><rect width="247" height="130" style="fill:#bf0a30"/>
+<g id="s3"><rect width="247" height="10" y="10" id="Ws" style="fill:#ffffff"/><use y="20" xlink:href="#Ws"/>
+<use y="40" xlink:href="#Ws"/></g><use y="60" xlink:href="#s3"/><rect width="98.8" height="70" style="fill:#002868"/>
+</g><g id="s24"><g id="row"><g id="hrow"><path id="St" style="fill:#ffffff"
+d="M16.043,44.1951H80.8008L28.4092,82.2656L48.4192,20.6707L68.4292,82.2656Z"/><use x="94.73683" xlink:href="#St"/>
+<use x="189.47367" xlink:href="#St"/><use x="284.2105" xlink:href="#St"/></g><use x="378.94733" xlink:href="#hrow"/>
+</g><use xlink:href="#row" y="87"/><use xlink:href="#row" y="174"/></g><use xlink:href="#s24" y="261"/></svg>

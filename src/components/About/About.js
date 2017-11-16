@@ -27,8 +27,3 @@ const About = ({ socialNetworks }) => (
 
 export default About;
 
-export const pageQuery = graphql`
-  query SocialNetworksQuery {
-    ...socialNetworks
-  }
-`;

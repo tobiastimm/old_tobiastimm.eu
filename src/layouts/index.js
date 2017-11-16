@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
 import Helmet from 'react-helmet';
 import './global-styles';
@@ -45,4 +46,20 @@ const DefaultLayout = ({ data, children }) => {
   );
 };
 
+DefaultLayout.propTypes = {
+  data: PropTypes.data,
+  children: PropTypes.node,
+};
+
+DefaultLayout.defaultProps = {
+  data: [],
+  children: [],
+};
+
 export default DefaultLayout;
+
+export const pageQuery = graphql`
+  query SocialNetworksQuery {
+    ...socialNetworks
+  }
+`;
