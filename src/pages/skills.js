@@ -34,11 +34,11 @@ const SubHeading = styled.h6`
 
 const ImageList = styled.div`
   display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+
   > div {
-    margin: 0 ${rem('10px')} 0 ${rem('10px')};
-  }
-  > div:first-child {
-    margin-left: 0;
+    margin: ${rem('10px')} ${rem('15px')} ${rem('5px')} 0;
   }
 `;
 
@@ -54,7 +54,7 @@ const SkillsPage = ({}) => (
     <hr />
     <div className="row mb-2">
       <div className="col-sm-12 my-4 col-md-6">
-        <Heading>Languages</Heading>
+        <Heading>Language</Heading>
 
         <SubHeading>Mother tongue</SubHeading>
 
@@ -77,7 +77,7 @@ const SkillsPage = ({}) => (
       </div>
 
       <div className="col-sm-12 my-4 col-md-6">
-        <Heading>Programming Languages</Heading>
+        <Heading>Programming Language</Heading>
 
         <SubHeading>Primary</SubHeading>
 
@@ -106,24 +106,24 @@ const SkillsPage = ({}) => (
 
     <div className="row mt-2">
       <div className="col-sm-12 my-4 col-md-6">
-        <Heading>Plattforms</Heading>
+        <Heading>Plattform</Heading>
         <ImageList>
-          <ImageLink title="Windows" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="Linux" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="macOS" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="Android" image="http://lorempixel.com/100/100/business/" />
+          <ImageLink title="Windows" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="Linux" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="macOS" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="Android" image="http://lorempixel.com/100/100/technics/" />
         </ImageList>
       </div>
       <div className="col-sm-12 my-4 col-md-6">
-        <Heading>Databases</Heading>
+        <Heading>Database</Heading>
         <ImageList>
-          <ImageLink title="PosgreSQL" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="MySQL" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="SQlite" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="MongoDb" image="http://lorempixel.com/100/100/business/" />
+          <ImageLink title="PosgreSQL" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="MySQL" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="SQlite" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="MongoDb" image="http://lorempixel.com/100/100/technics/" />
           <ImageLink
             title="Microsoft SQL Server 2008/2012"
-            image="http://lorempixel.com/100/100/business/"
+            image="http://lorempixel.com/100/100/technics/"
           />
         </ImageList>
       </div>
@@ -133,21 +133,21 @@ const SkillsPage = ({}) => (
       <div className="col-sm-12 my-4 col-md-6">
         <Heading>VCS</Heading>
         <ImageList>
-          <ImageLink title="MKS" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="SVN" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="TFS" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="Mercurial" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="git" image="http://lorempixel.com/100/100/business/" />
+          <ImageLink title="MKS" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="SVN" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="TFS" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="Mercurial" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="git" image="http://lorempixel.com/100/100/technics/" />
         </ImageList>
       </div>
       <div className="col-sm-12 my-4 col-md-6">
         <Heading>Issue Tracker</Heading>
         <ImageList>
-          <ImageLink title="Redmine" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="GitLab" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="JIRA" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="Sentry" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="Echolon" image="http://lorempixel.com/100/100/business/" />
+          <ImageLink title="Redmine" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="YouTrack" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="JIRA" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="Sentry" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="Echolon" image="http://lorempixel.com/100/100/technics/" />
         </ImageList>
       </div>
     </div>
@@ -156,23 +156,23 @@ const SkillsPage = ({}) => (
       <div className="col-sm-12 my-4 col-md-6">
         <Heading>CI Server</Heading>
         <ImageList>
-          <ImageLink title="Jenkins" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="TeamCity" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="BitBucket" image="http://lorempixel.com/100/100/business/" />
+          <ImageLink title="Jenkins" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="TeamCity" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="BitBucket" image="http://lorempixel.com/100/100/technics/" />
           <ImageLink
             title="Team Foundation Server"
-            image="http://lorempixel.com/100/100/business/"
+            image="http://lorempixel.com/100/100/technics/"
           />
-          <ImageLink title="GitLab" image="http://lorempixel.com/100/100/business/" />
+          <ImageLink title="GitLab" image="http://lorempixel.com/100/100/technics/" />
         </ImageList>
       </div>
       <div className="col-sm-12 my-4 col-md-6">
-        <Heading>Misc</Heading>
+        <Heading>Artifact & Code Quality</Heading>
         <ImageList>
-          <ImageLink title="Artifactory" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="Nexus" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="SonarQube" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="SeleniumGrid" image="http://lorempixel.com/100/100/business/" />
+          <ImageLink title="Artifactory" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="Nexus" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="SonarQube" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="SeleniumGrid" image="http://lorempixel.com/100/100/technics/" />
         </ImageList>
       </div>
     </div>
@@ -181,21 +181,21 @@ const SkillsPage = ({}) => (
       <div className="col-sm-12 my-4 col-md-6">
         <Heading>IDE</Heading>
         <ImageList>
-          <ImageLink title="IntelliJ IDEA" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="WebStorm" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="PHPStorm" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="Eclipse" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="Netbeans" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="Visual Studio" image="http://lorempixel.com/100/100/business/" />
+          <ImageLink title="IntelliJ IDEA" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="WebStorm" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="PHPStorm" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="Eclipse" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="Netbeans" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="Visual Studio" image="http://lorempixel.com/100/100/technics/" />
         </ImageList>
       </div>
       <div className="col-sm-12 my-4 col-md-6">
-        <Heading>Editors</Heading>
+        <Heading>Editor</Heading>
         <ImageList>
-          <ImageLink title="Visual Studio Code" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="Atom" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="Sublime Text" image="http://lorempixel.com/100/100/business/" />
-          <ImageLink title="Notepad++" image="http://lorempixel.com/100/100/business/" />
+          <ImageLink title="Visual Studio Code" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="Atom" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="Sublime Text" image="http://lorempixel.com/100/100/technics/" />
+          <ImageLink title="Notepad++" image="http://lorempixel.com/100/100/technics/" />
         </ImageList>
       </div>
     </div>
